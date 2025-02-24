@@ -34,8 +34,6 @@ def weather_index(request):
                 description=weather['description']
             )
 
-        # return render(request, 'weather_index.html', {'weather': weather})
-
     history = Weather.objects.all().order_by('-timestamp')
 
     return render(request, 'weather_index.html', {'weather': weather, 'history': history})
