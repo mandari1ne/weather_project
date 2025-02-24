@@ -21,19 +21,21 @@ def get_weather_data(city):
     return None
 
 def weather_index(request):
+    weather = None
+
     if request.method == 'POST':
         city = request.POST['city']
         weather = get_weather_data(city)
 
         if weather:
             Weather.objects.create(
-                city=weather[city],
+                city=weather['city'],
                 temperature=weather['temperature'],
                 description=weather['description']
             )
 
-        return render(request, 'weather_index.html', {'weather': weather})
+        # return render(request, 'weather_index.html', {'weather': weather})
 
     history = Weather.objects.all().order_by('-timestamp')
 
-    return render(request, 'weather_index.html', {'history': history})
+    return render(request, 'weather_index.html', {'weather': weather, 'history': history})
