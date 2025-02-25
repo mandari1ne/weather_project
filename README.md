@@ -1,4 +1,4 @@
-### Weather Query Web Application
+# Weather Query Web Application
 
 This project is developed using Django and PostgreSQL.
 PyCharm is used as the development environment.
@@ -32,7 +32,8 @@ Open PyCharm, navigate to the directory containing requirements.txt:
    python manage.py migrate
 ```
 ## Running the Application
-***Option 1:*** Run with Docker
+### ***Option 1:***
+Run with Docker
 ```bash
 docker run --name postgres_db -e POSTGRES_DB=weather -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -p 5432:5432 -d postgres:13
 
@@ -40,11 +41,12 @@ docker build -t django_app .
 
 docker run --name django_app --link postgres_db:postgres_db -p 8000:8000 -d django_app
 ```
-link: http://127.0.0.1:8000/
+**link:** http://127.0.0.1:8000/
 
 When you start the application for the very first time, use these commands in the terminal. This will create the containers. After that, you can start them using Docker Desktop. First, start the database container, and then start the application container.
 
-***Option 2:*** Run without Docker
+### ***Option 2:*** 
+Run without Docker
 If you run the project without Docker, you need to change the database settings in settings.py.
 
 Find this block:
@@ -77,7 +79,7 @@ Then, run the application:
 ```bash
 python manage.py runserver
 ```
-link: http://127.0.0.1:8000/
+**link:** http://127.0.0.1:8000/
 
 ## If everything is set up correctly, the application will start.
 ***You will see:***
