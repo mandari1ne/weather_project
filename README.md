@@ -8,7 +8,7 @@ Installation and Setup
    git clone https://github.com/mandari1ne/weather_project.git
    cd weather_project
 
-2. Set up PostgreSQL
+3. Set up PostgreSQL
 You need to download and install pgAdmin4 for PostgreSQL.
 
   Create a new user with:
