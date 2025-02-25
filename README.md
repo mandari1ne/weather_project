@@ -36,6 +36,8 @@ docker build -t django_app .
 
 docker run --name django_app --link postgres_db:postgres_db -p 8000:8000 -d django_app
 
+When you start the application for the very first time, use these commands in the terminal. This will create the containers. After that, you can start them using Docker Desktop. First, start the database container, and then start the application container.
+
 Option 2: Run without Docker
 If you run the project without Docker, you need to change the database settings in settings.py.
 
